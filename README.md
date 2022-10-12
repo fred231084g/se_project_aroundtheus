@@ -22,4 +22,4 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 **GitHub**
 
-[Link to Github]()
+[Link to Github](https://freddy-pc.github.io/se_project_aroundtheus/)
