@@ -39,6 +39,7 @@
   align-self: center;
   opacity: 100%;
   cursor: pointer;
+  transition: 0.75s;
 }
 .profile__edit-button:hover {
   opacity: 60%;
@@ -62,7 +63,7 @@
   border-radius: 2px;
   opacity: 100%;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.75s;
 }
 .profile__add-button:hover {
   opacity: 60%;
@@ -119,6 +120,11 @@
     font-size: 22px;
     line-height: 27px;
   }
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+  }
   .profile__description {
     width: 100%;
     text-align: center;
@@ -129,6 +135,7 @@
   .profile__add-button {
     margin: 0;
     width: 100%;
+    background-size: 16px 16px;
   }
 }
 
