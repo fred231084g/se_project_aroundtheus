@@ -86,21 +86,7 @@ function createCard(data) {
 //Renders new cards
 function renderCard(data) {
   const cardEl = createCard(data);
-  cardListEl.appendChild(cardEl);
   cardListEl.append(cardEl);
 }
 
 initialCards.forEach(renderCard);
-
-/*
- *Old unorganized way of making andrendering new cards
-initialCards.forEach(function (cardData) {
-  const cardEl = cardTemplate.cloneNode(true);
-  const imageEl = cardEl.querySelector(".card__image");
-  const cardTitle = cardEl.querySelector(".card__title");
-  imageEl.src = cardData.link;
-  imageEl.alt = cardData.name;
-  cardTitle.textContent = cardData.name;
-  cardListEl.appendChild(cardEl);
-});
-*/
