@@ -8,10 +8,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s 0.5s linear;
 }
 .modal_opened {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.25s 0.5s linear;
 }
 .modal__container {
   position: relative;
