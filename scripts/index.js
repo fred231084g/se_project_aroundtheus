@@ -44,11 +44,11 @@ const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-// Opens and Closes Edit Button
+// Open Profile
 function openModal() {
   profileEdit.classList.add("modal_opened");
 }
-
+// Close Profile
 function closeModal() {
   profileEdit.classList.remove("modal_opened");
 }
@@ -73,7 +73,7 @@ profileEditForm.addEventListener("submit", function (event) {
   closeModal();
 });
 
-//Create card
+//Creates card
 function createCard(data) {
   const cardEl = cardTemplate.cloneNode(true);
   const imageEl = cardEl.querySelector(".card__image");
@@ -83,7 +83,7 @@ function createCard(data) {
   cardTitle.textContent = data.name;
   return cardEl;
 }
-//Render new cards
+//Renders new cards
 function renderCard(data) {
   const cardEl = createCard(data);
   cardListEl.appendChild(cardEl);
@@ -93,7 +93,7 @@ function renderCard(data) {
 initialCards.forEach(renderCard);
 
 /*
-// Old unorganized way of making and rendering new cards
+ *Old unorganized way of making andrendering new cards
 initialCards.forEach(function (cardData) {
   const cardEl = cardTemplate.cloneNode(true);
   const imageEl = cardEl.querySelector(".card__image");
