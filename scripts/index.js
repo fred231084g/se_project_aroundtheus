@@ -25,9 +25,9 @@ const initialCards = [
   },
 ];
 
-const editButton = document.querySelector(".profile__edit-button");
+const editProfileButton = document.querySelector(".profile__edit-button");
 const profileEdit = document.querySelector(".modal");
-const exitButton = document.querySelector(".modal__exit-button");
+const profileExitButton = document.querySelector(".modal__exit-button");
 const profileEditForm = document.querySelector("#edit-profile-form");
 
 const profileTitleEl = document.querySelector(".profile__title");
@@ -53,14 +53,14 @@ function closeModal() {
   profileEdit.classList.remove("modal_opened");
 }
 
-editButton.addEventListener("click", function (evt) {
+editProfileButton.addEventListener("click", function (evt) {
   profileTitleInput.value = profileTitleEl.textContent;
   profileDescriptionInput.value = profileDescriptionEl.textContent;
 
   openModal();
 });
 
-exitButton.addEventListener("click", closeModal);
+profileExitButton.addEventListener("click", closeModal);
 
 profileEditForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -73,7 +73,27 @@ profileEditForm.addEventListener("submit", function (event) {
   closeModal();
 });
 
-// Renders new cards
+//Create card
+function createCard(data) {
+  const cardEl = cardTemplate.cloneNode(true);
+  const imageEl = cardEl.querySelector(".card__image");
+  const cardTitle = cardEl.querySelector(".card__title");
+  imageEl.src = data.link;
+  imageEl.alt = data.name;
+  cardTitle.textContent = data.name;
+  return cardEl;
+}
+//Render new cards
+function renderCard(data) {
+  const cardEl = createCard(data);
+  cardListEl.appendChild(cardEl);
+  cardListEl.append(cardEl);
+}
+
+initialCards.forEach(renderCard);
+
+/*
+// Old unorganized way of making and rendering new cards
 initialCards.forEach(function (cardData) {
   const cardEl = cardTemplate.cloneNode(true);
   const imageEl = cardEl.querySelector(".card__image");
@@ -83,3 +103,4 @@ initialCards.forEach(function (cardData) {
   cardTitle.textContent = cardData.name;
   cardListEl.appendChild(cardEl);
 });
+*/
